@@ -1,22 +1,22 @@
 package piano.instruments;
 
-import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InstrumentDictionary {
+public class InstrumentList {
 
     private ArrayList<Instrument> instruments = new ArrayList<>();
 
-    public InstrumentDictionary()
+    public InstrumentList()
     {
         //instrument data from https://www.midi.org/specifications-old/item/gm-level-1-sound-set
 
         try
         {
-            File dictionary = new File("src/main/java/piano/instruments/ListOfInstruments.txt");
+            InputStream list = InstrumentList.class.getResourceAsStream("ListOfInstruments.txt");
 
-            Scanner readFile = new Scanner(dictionary);
+            Scanner readFile = new Scanner(list);
             while (readFile.hasNextLine()) {
                 String line = readFile.nextLine();
                 String[] entry = line.split(" ", 2);

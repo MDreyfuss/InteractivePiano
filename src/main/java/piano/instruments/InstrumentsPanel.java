@@ -12,7 +12,7 @@ public class InstrumentsPanel extends JPanel {
         setSize(MainFrameInterface.KEYBOARD_WIDTH, MainFrameInterface.INSTRUMENTS_PANEL_HEIGHT);
         setBackground(Color.BLACK);
         JComboBox combo = new JComboBox();
-        InstrumentDictionary instrumentDictionary= new InstrumentDictionary();
+        InstrumentList instrumentDictionary= new InstrumentList();
 
         for (Instrument next: instrumentDictionary.getInstruments()) {
             combo.addItem(next);

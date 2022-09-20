@@ -1,19 +1,19 @@
 package piano.instruments;
 
 public class Instrument {
-    private String instrumentName;
-    private Integer instrumentSound;
+    private String name;
+    private int sound;
 
     public Instrument(String instrumentName, int instrumentSound) {
-        this.instrumentName = instrumentName;
-        this.instrumentSound = instrumentSound;
+        this.name = instrumentName;
+        this.sound = instrumentSound;
     }
 
     public Integer getInstrumentSound() {
-        return instrumentSound;
+        return sound;
     }
 
     public String toString() {
-        return instrumentName;
+        return name;
     }
 }

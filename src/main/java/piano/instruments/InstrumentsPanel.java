@@ -14,10 +14,10 @@ public class InstrumentsPanel extends JPanel {
         JComboBox combo = new JComboBox();
         InstrumentDictionary instrumentDictionary= new InstrumentDictionary();
 
-        for (String next: instrumentDictionary.getInstrumentNames()) {
+        for (Instrument next: instrumentDictionary.getInstruments()) {
             combo.addItem(next);
         }
-        combo.addActionListener(e -> midiChannel.programChange(instrumentDictionary.getSound((String) combo.getSelectedItem())));
+        combo.addActionListener(e -> midiChannel.programChange(((Instrument) combo.getSelectedItem()).getInstrumentSound()));
         add(combo);
     }
 }

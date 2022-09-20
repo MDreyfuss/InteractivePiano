@@ -1,16 +1,12 @@
 package piano.instruments;
 
 import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class InstrumentDictionary {
 
-    private ArrayList<String> instrumentName = new ArrayList<>();
-    private HashMap<String, Integer> instrumentSounds = new HashMap<>();
+    private ArrayList<Instrument> instruments = new ArrayList<>();
 
     public InstrumentDictionary()
     {
@@ -24,24 +20,16 @@ public class InstrumentDictionary {
             while (readFile.hasNextLine()) {
                 String line = readFile.nextLine();
                 String[] entry = line.split(" ", 2);
-                instrumentName.add(entry[1]);
-                instrumentSounds.put(entry[1], Integer.valueOf(entry[0]));
+                instruments.add(new Instrument(entry[1], Integer.valueOf(entry[0])));
             }
         } catch (Exception e){
-            File directory = new File("./");
-            System.out.println(directory.getAbsolutePath());
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
-    public Integer getSound(String lookUpInstrument)
+    public ArrayList<Instrument> getInstruments ()
     {
-        return instrumentSounds.get(lookUpInstrument);
-    }
-
-    public ArrayList<String> getInstrumentNames ()
-    {
-        return this.instrumentName;
+        return this.instruments;
     }
 }
 

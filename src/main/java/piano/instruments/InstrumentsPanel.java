@@ -17,7 +17,7 @@ public class InstrumentsPanel extends JPanel {
         for (Instrument next: instrumentDictionary.getInstruments()) {
             combo.addItem(next);
         }
-        combo.addActionListener(e -> midiChannel.programChange(((Instrument) combo.getSelectedItem()).getInstrumentSound()));
+        combo.addActionListener(e -> midiChannel.programChange(((Instrument) combo.getSelectedItem()).getSound()));
         add(combo);
     }
 }

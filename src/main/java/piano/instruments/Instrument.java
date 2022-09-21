@@ -4,12 +4,12 @@ public class Instrument {
     private String name;
     private int sound;
 
-    public Instrument(String instrumentName, int instrumentSound) {
-        this.name = instrumentName;
-        this.sound = instrumentSound;
+    public Instrument(String name, int sound) {
+        this.name = name;
+        this.sound = sound;
     }
 
-    public Integer getInstrumentSound() {
+    public Integer getSound() {
         return sound;
     }
 
